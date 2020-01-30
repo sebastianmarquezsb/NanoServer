@@ -91,4 +91,28 @@ AdministratorPassword: *********
 Listo. El registro se encuentra en: D:\NanoServer\NanoServerImageGenerator\.Base\Logs\2020-01-30_00-32-55-98
 PS D:\NanoServer\NanoServerImageGenerator>
 ````
+
+## Añadir IIS Server Package en Nano Server de Windows Server 2016
+````ps1
+Windows PowerShell
+  Mount-DiskImage -ImagePath D:\NanoServer\NanoServerImageGenerator\.NanoServer01.vhd
+````
+
+````ps1
+Windows PowerShell
+  Add-WindowsPackage -Path F:\ -PackagePath D:\NanoServer\Packages\Microsoft-NanoServer-IIS-Package.cab
+````
+
+````ps1
+Windows PowerShell
+  DisMount-DiskImage -ImagePath D:\NanoServer\NanoServerImageGenerator\.NanoServer01.vhd
+````
+
+## Connect Nano Server desde PowerShell
+````ps1
+Windows PowerShell
+  Enter-PSSession -VMName NanoServer01
+````
+
+
 Copyright (C) Sebastian Marquez. Todos los derechos reservados.
